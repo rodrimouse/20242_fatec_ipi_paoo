@@ -1,3 +1,141 @@
+//Objetos Javascript literais (JSON: Javascript Object Notation)
+//operação somar, que soma dois valores, implementada com uma arrow function
+//que não usa return
+
+//operação subtrair, que subtrai dois valores, implementada com uma function regular
+
+let a = {"": 1}
+console.log(a[""])
+
+let calculadora = {
+  somar: (a, b) => a + b,
+  subtrair: function(a, b){
+    return a - b
+  }
+  // subtrair:(a, b) => this.somar(a, b)
+  // // subtrair: function(a, b){
+  // //   return this.somar(a, -b)
+  // // }
+}
+
+console.log(calculadora.somar(2, 2))
+console.log(calculadora.subtrair(2, 2))
+
+
+
+//Uma concessionária tem CNPJ e endereço, com rua, numero e bairro. Ela possui alguns carros em estoque. Cada carro tem marca, modelo e ano de fabricação
+// let concessionaria = {
+//   nome: 'C1',
+//   cnpj: '123.456.789-33',
+//   endereco: {
+//     logradouro: 'Rua B',
+//     numero: 11,
+//     bairro: 'Vila J'
+//   },
+//   carros: [
+//     {
+//       marca: 'VW',
+//       modelo: 'Gol',
+//       ano: 2000
+//     },
+//     {
+//       marca: 'GM',
+//       modelo: 'Corsa',
+//       ano: 2005
+//     }
+//   ]
+// }
+
+// for(let veiculo of concessionaria.carros){
+//   console.log(veiculo.marca)
+// }
+
+//exibir corsa
+// console.log(concessionaria['carros'][1]['modelo'])
+
+//faça um for, mostrando o modelo de cada veiculo
+//pesquise sobre o for/of no site mdn
+
+
+//uma pessoa se chama Maria, tem 21 anos e mora na Rua B, número 64
+//Seu nome
+//Seu RA
+//Seu e-mail
+
+// let pessoa = {
+//   'Seu nome': 'Alicia'
+// }
+
+// console.log(pessoa['Seu nome'])
+
+// let pessoa = {
+//   nome: 'Maria',
+//   idade: 21,
+//   endereco: {
+//     logradouro: 'Rua B',
+//     numero: 64
+//   }
+// }
+// console.log(pessoa.endereco.logradouro)
+// console.log(pessoa['endereco']['numero'])
+// console.log(pessoa.endereco[logradouro])
+// console.log(pessoa['endereco'].numero)
+
+
+//uma pessoa que se chama João e tem 17 anos
+// let pessoa = {
+//   nome: `João`,
+//   idade: 17
+// }
+
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+
+
+
+
+// function eAgora(){
+//   let cont = 1
+//   function f1(){
+//     console.log(cont)
+//     cont++
+//   }
+//   cont++
+//   function f2(){
+//     console.log(cont)
+//     cont++
+
+//   }
+//   cont++
+
+//   return [f1, f2]
+// }
+// let funcoes = eAgora()
+// funcoes[0]()
+// funcoes[1]()
+
+// function ola(){
+//   let nome = 'João'
+//   return function(){
+//     console.log(`Olá ${nome}`)
+//   }
+// }
+
+// const res = ola()
+// res()
+
+// function f(){
+//   let nome = 'João'
+//   function g(){
+//     let a
+//     console.log(nome)
+//   }
+//   g()
+// }
+// f()
+
+
+
 
 
 // GET localhost:8080/livros
@@ -7,8 +145,9 @@
 
 // POST localhost:8080/livros
 // app.post('/graphql', function(req, res){})
-
 //closures
+
+
 //função de alta ordem
 // function f (funcao){
 //   console.log('f')
