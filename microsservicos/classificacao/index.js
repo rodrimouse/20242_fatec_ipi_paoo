@@ -14,8 +14,11 @@ const funcoes = {
   }
 }
 app.post('/eventos', (req, res) => {
-  const evento = req.body
-  funcoes[evento.type](evento.payload)
+  try{
+    const evento = req.body
+    funcoes[evento.type](evento.payload)
+  }
+  catch (e){}
   res.status(200).end()
 })
 
