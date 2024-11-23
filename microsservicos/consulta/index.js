@@ -8,19 +8,22 @@ app.use(express.json())
 //tipo do evento : função a ser executada
 const funcoes = {
   LembreteCriado: (lembrete) => {
-    baseConsolidada[lembrete.id] = lembrete
+    baseConsolidada[lembrete.id] = lembrete;
+  },
+  LembreteClassificado: (lembrete) => {
+    baseConsolidada[lembrete.id].status = lembrete.status;
   },
   ObservacaoCriada: (observacao) => {
-    const observacoes = baseConsolidada[observacao.lembreteId]['observacoes'] || []
-    observacoes.push(observacao)
-    baseConsolidada[observacao.lembreteId]['observacoes'] = observacoes
+    const observacoes = baseConsolidada[observacao.lembreteId]['observacoes'] || [];
+    observacoes.push(observacao);
+    baseConsolidada[observacao.lembreteId]['observacoes'] = observacoes;
   },
   ObservacaoAtualizada: (observacao) => {
-    const observacoes = baseConsolidada[observacao.lembreteId]['observacoes']
-    const indice  = observacoes.findIndex(o => o.id === observacao.id)
-    observacoes[indice] = observacao
-  }
-}
+    const observacoes = baseConsolidada[observacao.lembreteId]['observacoes'];
+    const indice = observacoes.findIndex((o) => o.id === observacao.id);
+    observacoes[indice] = observacao;
+  },
+};
 
 const baseConsolidada = {}
 
